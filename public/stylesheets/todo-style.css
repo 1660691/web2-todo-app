@@ -1,0 +1,228 @@
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    height: 100%;
+}
+@font-face{
+	font-family: myFont;
+	src: url("/libs/fonts/myfont.ttf");
+}
+body{
+    background: url("/images/border2.png"), url("/images/background1.png"), url("/images/fire.gif");
+    background-size: 100% 100%, cover, 120% 100%;
+    background-position: center, center, center;
+}
+#container{
+    height: 100%;
+}
+#frmTodo{
+    background: url("/images/border1.png");
+    background-size: 100% 100%;
+    background-position: center;
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    padding: 100px;
+    font-size: 25px;
+    font-family: myFont;
+    color: gold;
+    -webkit-animation: frmScale 0.5s linear;
+}
+@-webkit-keyframes frmScale{
+    from{
+        -webkit-transform: scale(0,0);
+    } to {
+        -webkit-transform: scale(1,1);
+    }
+}
+#note{
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+    border: 0;
+    color: gold;
+    box-shadow: 0 0 5px gold;
+    background: url("/images/border2.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+#doneNote{
+    background: url("/images/border2.png");
+    background-size: 100% 100%;
+    background-position: center;
+}
+#note:focus{
+    box-shadow: 0 0 20px gold;
+}
+#btnDone, #btnAdd{
+    width: 100%;
+    background: url("/images/border2.png"),url("/images/fire.gif");
+    background-size: 100% 100%;
+    background-position: center, center;
+    color: gold;
+    text-shadow: 2px 2px 10px red;
+    border: 0;
+    box-shadow: 2px 2px 10px gold;
+    border-radius: 5px;
+    transition: 0.2s;
+    -webkit-animation: btnRotation 0.5s linear;
+}
+#btnAdd:hover{
+    transform: scale(1.1,1.1);
+    box-shadow: 2px 2px 20px gold;
+    text-shadow: 2px 2px 10px gold;
+}
+#btnDone:hover{
+    transform: scale(1.01,1.01);
+    box-shadow: 2px 2px 20px gold;
+    text-shadow: 2px 2px 10px gold;
+}
+@-webkit-keyframes btnRotation{
+    from{
+        -webkit-transform: rotateX(180deg);
+    } to {
+        -webkit-transform: rotateX(359deg);
+    }
+}
+#btnAdd{
+    width: 100%;
+}
+#welcome{
+    background: url("/images/border1.png");
+    background-size: 100% 100%;
+    background-position: center;
+    text-shadow: 2px 2px 20px red;
+    font-size: 40px;
+    text-align: center;
+    -webkit-animation: welcomeScale 0.8s linear;
+}
+@-webkit-keyframes welcomeScale{
+    from{
+        -webkit-transform: scale(6,6);
+    } to {
+        -webkit-transform: scale(1,1);
+    }
+}
+#title{
+    background: url("/images/border2.png");
+    background-size: 100% 100%;
+    background-position: center;
+    color: gold;
+    font-size: 25px;
+    width: 100%;
+    margin: auto;
+    margin-top: 15px;
+    text-shadow: 2px 2px 10px red;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 0;
+    padding: 10px;
+    box-shadow: 0 0 10px gold;
+    text-align: center;
+}
+#title div:nth-child(2){
+    text-align: left;
+}
+#todo-table{
+    width: auto;
+    width: 100%;
+    color: gold;
+}
+#todo-table tr:nth-child(odd){
+    background-color: rgba(0 , 0, 0, 0.6);
+}
+#todo-table tr:nth-child(even){
+    
+}
+#todo-table tr td{
+    padding: 10px;
+    transition: 0.2s;
+}
+#todo-table tr td:not(#doneNote):hover{
+    transform: scale(1.1,1.1);
+}
+#todo-table tr:not(#doneNoteRow):hover{
+    text-shadow: 2px 2px 10px red;
+    box-shadow: 2px 2px 30px gold;
+    background: url("/images/border2.png"),url("/images/fire.gif");
+    background-size: 100% 100%,100% 100%;
+    background-position: center,center;
+}
+#todo-div{
+    background: url("/images/border2.png");
+    background-size: 100% 100%;
+    background-position: center;
+    height: 50%;
+    overflow: auto;
+    box-shadow: 0 0 10px gold;
+    margin: auto;
+}
+a:hover{
+    font-weight: bold;
+}
+/* width */
+::-webkit-scrollbar {
+    width:10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 10px;
+    width: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    box-shadow: 0 0 20px gold;
+    background-color: rgba(0,0,0,0.8);
+    border: 1px solid gold;
+    border-radius: 10px;
+    width: 10px;
+  }
+@media screen and (max-width: 1120px){
+    #welcome{
+        font-size: 30px;
+    }
+    #frmTodo{
+        font-size: 20px;
+    }
+    #title{
+        font-size: 20px;
+    }
+    
+}
+@media screen and (max-width: 992px){
+    #frmTodo{
+        padding: 80px;
+    }
+    #btnAdd{
+        float: right;
+        width: 30%;
+        margin-top: 5px;
+    }
+}
+@media screen and (max-width: 690px){
+    #frmTodo{
+        padding: 80px;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 576px){
+    #frmTodo{
+        padding: 40px;
+        width: 100%;
+    }
+    #todo-div{
+        height: 45%;
+    }
+    #welcome{
+        margin-top: 20px;
+    }
+}
